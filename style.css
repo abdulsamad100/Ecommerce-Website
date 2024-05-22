@@ -1,0 +1,48 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(4, 169, 202);
+    padding: 10px 30px;
+}
+
+header > div {
+    display: flex;
+    align-items: center;
+}
+
+header img {
+    width: 50px;
+    height: 49px;
+    margin-right: 10px; 
+}
+
+#search {
+    width: 500px;
+    padding-top: 10px;
+}
+
+#lt{
+    color: white;
+   font-weight: 650;
+   font-size: larger;
+}
+.hdbtn{
+    margin-left: 10px;
+}
+#cartico{
+    width: 40px;
+    height: 40px;
+    margin-left: 20px;
+}
+#allcards{
+    display: flex;
+    justify-content: space-between;
+    row-gap: 50px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.cdimg{
+    height: 100px;
+    display: none;
+}
