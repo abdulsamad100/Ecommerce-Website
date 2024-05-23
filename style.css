@@ -46,3 +46,15 @@ header img {
     height: 100px;
     display: none;
 }
+footer{
+    width: 100vw;
+}
+
+.btn-primary{
+    background-color: rgb(4, 169, 202);
+    border: none;
+}
+.btn-primary:hover{
+    background-color: rgb(4, 169, 202);
+    border: none;
+}
