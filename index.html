@@ -16,7 +16,9 @@
 </head>
 
 <body>
+    <p id="pas" class="opacityzero">Product Added Successfully</p>
     <header>
+        <p id="pnf" class="opacityzero">Product Not Found</p>
         <div>
             <img src="Images/Logo.png" alt="" />
             <span id="lt">Med-24/7</span>
@@ -36,8 +38,9 @@
             <img src="Images/cart.png" alt="" id="cartico" />
         </div>
     </header>
+
     <section id="hero" class="d-flex container align-items-center">
-        <div class="container d-flex flex-column align-items-start">
+        <div class="container d-flex flex-column align-items-start" id="herochild">
             <h1 class="display-4" id="heroTitle"></h1>
             <p class="" id="heroDescription"></p>
             <br><br><br>
@@ -52,90 +55,107 @@
         </div>
         <img src="" id="heroImage" alt="Panadol" class="img-fluid mb-3" style="width: 900px" />
     </section>
+
     <h2 id="cardhead">All Products</h2><br>
-    <div id="allcards" class="ontainer">
-        <div class="card" style="width: 18rem" id="Panadol">
+
+    <div id="allcards">
+        <div class="card" style="width: 18rem" id="Panadol" onclick="openMain(panadol)">
             <img src="" class="card-img-top" alt="..." />
             <div class="card-body itemcenter">
                 <h5 class="card-title" id="panadoltxt"></h5>
                 <p class="card-text"></p>
                 <h5></h5>
-                <a href="#" class="btn btn-primary">Add to Cart</a>
+                <a href="#allcards" class="btn btn-primary">Learn More</a>
             </div>
         </div>
 
-        <div class="card" style="width: 18rem" id="Brufen">
+        <div class="card" style="width: 18rem" id="Brufen" onclick="openMain(brufen)">
             <img src="" class="card-img-top" alt="..." />
             <div class="card-body itemcenter">
                 <h5 class="card-title"></h5>
                 <p class="card-text"></p>
                 <h5></h5>
-                <a href="#" class="btn btn-primary">Add to Cart</a>
+                <a href="#allcards" class="btn btn-primary">Learn More</a>
             </div>
         </div>
 
-        <div class="card" style="width: 18rem" id="Entamizole">
+        <div class="card" style="width: 18rem" id="Entamizole" onclick="openMain(entamizole)">
             <img src="" class="card-img-top" alt="..." />
             <div class="card-body itemcenter">
                 <h5 class="card-title"></h5>
                 <p class="card-text"></p>
                 <h5></h5>
-                <a href="#" class="btn btn-primary">Add to Cart</a>
+                <a href="#allcards" class="btn btn-primary">Learn More</a>
             </div>
         </div>
 
-        <div class="card" style="width: 18rem" id="Flagyl">
+        <div class="card" style="width: 18rem" id="Flagyl" onclick="openMain(flagyl)">
             <img src="" class="card-img-top" alt="..." />
             <div class="card-body itemcenter">
                 <h5 class="card-title"></h5>
                 <p class="card-text"></p>
                 <h5></h5>
-                <a href="#" class="btn btn-primary">Add to Cart</a>
+                <a href="#allcards" class="btn btn-primary">Learn More</a>
             </div>
         </div>
 
-        <div class="card" style="width: 18rem" id="Risek">
+        <div class="card" style="width: 18rem" id="Risek" onclick="openMain(risek)">
             <img src="" class="card-img-top" alt="..." />
             <div class="card-body itemcenter">
                 <h5 class="card-title"></h5>
                 <p class="card-text"></p>
                 <h5></h5>
-                <a href="#" class="btn btn-primary">Add to Cart</a>
+                <a href="#allcards" class="btn btn-primary">Learn More</a>
             </div>
         </div>
 
-        <div class="card" style="width: 18rem" id="Imodium">
+        <div class="card" style="width: 18rem" id="Imodium" onclick="openMain(imodium)">
             <img src="" class="card-img-top" alt="..." />
             <div class="card-body itemcenter">
                 <h5 class="card-title"></h5>
                 <p class="card-text"></p>
                 <h5></h5>
-                <a href="#" class="btn btn-primary">Add to Cart</a>
+                <a href="#allcards" class="btn btn-primary">Learn More</a>
             </div>
         </div>
 
-        <div class="card" style="width: 18rem" id="Novidat">
+        <div class="card" style="width: 18rem" id="Novidat" onclick="openMain(novidat)">
             <img src="" class="card-img-top" alt="..." />
             <div class="card-body itemcenter">
                 <h5 class="card-title"></h5>
                 <p class="card-text"></p>
                 <h5></h5>
-                <a href="#" class="btn btn-primary">Add to Cart</a>
+                <a href="#allcards" class="btn btn-primary">Learn More</a>
             </div>
         </div>
 
-        <div class="card" style="width: 18rem" id="Myteka">
+        <div class="card" style="width: 18rem" id="Myteka" onclick="openMain(myteka)">
             <img src="" class="card-img-top" alt="..." />
             <div class="card-body itemcenter">
                 <h5 class="card-title"></h5>
                 <p class="card-text"></p>
                 <h5></h5>
-                <a href="#" class="btn btn-primary">Add to Cart</a>
+                <a href="#allcards" class="btn btn-primary">Learn More</a>
             </div>
         </div>
     </div>
-
+    <div></div>
     <br /><br />
+    <div class="displaynone" id="mainpopup">
+        <div id="bgblur"></div>
+        <img src="Images/cross.png" alt="" id="cross" onclick="closeMain()">
+        <div id="bigcard">
+            <div class="card" id="maincard">
+                <img src="" class="card-img-top" alt="..." />
+                <div class="card-body itemcenter" id="mcardbody">
+                    <h5 class="card-title" id="maintitle"></h5>
+                    <p class="card-text" id="maintxt"></p>
+                    <h5 id="mainprice"></h5>
+                    <a href="#" class="btn btn-primary" onclick="buyMain()">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <footer class="text-center text-lg-start bg-body-tertiary text-muted">
         <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
@@ -221,7 +241,7 @@
             </div>
         </section>
 
-        <div class="text-center p-4" style="background-color: rgb(4, 169, 202); color: white">
+        <div class="text-center p-4" style="background-color: var(--blue); color: white">
             © 2024 Copyright:
             <a class="text-reset fw-bold" href="#" style="color: white">Med-24/7</a>
         </div>

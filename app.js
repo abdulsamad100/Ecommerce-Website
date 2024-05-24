@@ -35,7 +35,7 @@ var risek = {
 
 var imodium = {
     name: "Imodium",
-    description: "The solution works by slowing down your overactive bowel. Decrease the number of bowel movements.",
+    description: "The solution works by slowing your overactive bowel. Decrease the # of bowel movements.",
     image: "Images/Imodium.png",
     price: 250
 };
@@ -81,13 +81,58 @@ updateMedicineCard('Imodium', imodium);
 updateMedicineCard('Novidat', novidat);
 updateMedicineCard('Myteka', myteka);
 
-var heromedicine=panadol;
+var heromedicine = panadol;
 function updateHeroWithPanadol() {
     document.getElementById("heroTitle").innerText = heromedicine.name;
     document.getElementById("heroDescription").innerText = heromedicine.description;
     document.getElementById("heroImage").setAttribute("src", heromedicine.image);
-    var heropricehead=document.getElementById("heroprice").getElementsByTagName('h3')[0]
-    heropricehead.innerText="Rs. "+heromedicine.price;
+    var heropricehead = document.getElementById("heroprice").getElementsByTagName('h3')[0]
+    heropricehead.innerText = "Rs. " + heromedicine.price;
 }
 
+function searchCard() {
+    var tosearch = document.getElementById("searchBox").value.toLowerCase();
+    var cards = document.getElementsByClassName('card');
+    var found = false;
+
+    for (var i = 0; i < cards.length; i++) {
+        var card = cards[i];
+        var cardId = card.id.toLowerCase();
+        var cardTitle = card.getElementsByClassName('card-title')[0].innerText.toLowerCase();
+
+        if (cardId.includes(tosearch) || cardTitle.includes(tosearch)) {
+            card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            card.style.border = "3px solid rgb(0, 168, 202)"; // Highlight the found card
+            setTimeout(() => { card.style.border = ""; }, 3000);
+            found = true;
+            break;
+        }
+    }
+
+    if (!found) {
+        var pnf = document.getElementById("pnf");
+        pnf.classList.remove("opacityzero");
+        setTimeout(() => { pnf.classList.add("opacityzero") }, 2000);
+    }
+}
+
+function openMain(medicineclicked) {
+    document.getElementById("mainpopup").classList.remove("displaynone");
+    updateMedicineCard('maincard', medicineclicked);
+}
+
+function buyMain() {
+    var pas = document.getElementById("pas");
+    pas.classList.remove("opacityzero");
+    setTimeout(() => { pas.classList.add("opacityzero") }, 2000);
+    document.getElementById("mainpopup").classList.add("displaynone");
+}
+
+function closeMain() {
+    document.getElementById("mainpopup").classList.add("displaynone");
+}
+
+// updateMedicineCard('maincard', panadol)
+
 updateHeroWithPanadol();
+console.warn("Donot Try any script here or else you will be tracked and then believe me you are gone\n\nJust Kidding Have fun :)")
